@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>우리의 결혼식</title>
+  <style>
+    body { margin:0; font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 28px 18px 60px; line-height: 1.6; }
+    .card { border: 1px solid #eee; border-radius: 18px; padding: 18px; margin: 14px 0; }
+    h1 { font-size: 24px; margin: 10px 0 6px; }
+    .sub { color:#666; font-size: 14px; margin: 0 0 14px; }
+    .row { display:flex; gap:10px; flex-wrap:wrap; }
+    .btn {
+      display:inline-block; padding: 12px 14px; border-radius: 14px;
+      border: 1px solid #ddd; text-decoration:none; color:#111; font-size: 14px;
+    }
+    .btn:active { transform: scale(0.99); }
+    .muted { color:#666; font-size: 13px; }
+    .divider { height: 1px; background:#f1f1f1; margin: 18px 0; }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="card">
+      <h1>부담 없이 와서, 편하게 웃다 가세요.</h1>
+      <p class="sub">큰 연출은 없지만 저희에게는 중요한 하루입니다.</p>
+      <p class="muted">신랑 ○○○ · 신부 ○○○</p>
+    </header>
+
+    <section class="card">
+      <h2 style="font-size:18px; margin:0 0 8px;">일시 · 장소</h2>
+      <div class="divider"></div>
+      <p><strong>2027년 ○월 ○일 (토) ○시</strong></p>
+      <p>○○웨딩홀 ○층 ○홀</p>
+      <p class="muted">서울 ○○구 ○○로 ○○ (○○역 도보 ○분)</p>
+    </section>
+
+    <section class="card">
+      <h2 style="font-size:18px; margin:0 0 8px;">오시는 길</h2>
+      <div class="divider"></div>
+      <div class="row">
+        <!-- 아래 링크는 나중에 네이버/카카오 지도 링크로 바꿔도 돼 -->
+        <a class="btn" href="#" onclick="alert('지도 링크를 나중에 넣어줄게요!')">지도 보기</a>
+        <button class="btn" onclick="copyAddress()">주소 복사</button>
+      </div>
+      <p id="addr" class="muted" style="margin-top:10px;">
+        서울 ○○구 ○○로 ○○ (○○웨딩홀)
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 style="font-size:18px; margin:0 0 8px;">연락처</h2>
+      <div class="divider"></div>
+      <div class="row">
+        <a class="btn" href="tel:010-0000-0000">신랑에게 전화</a>
+        <a class="btn" href="tel:010-0000-0000">신부에게 전화</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="font-size:18px; margin:0 0 8px;">참석 의사</h2>
+      <div class="divider"></div>
+      <p class="muted">식사는 여유 있게 준비하고 싶어 간단히 알려주시면 감사하겠습니다.</p>
+      <a class="btn" href="#" onclick="alert('여기에 구글폼 링크를 넣으면 돼요!')">참석 여부 남기기</a>
+    </section>
+
+    <section class="card">
+      <h2 style="font-size:18px; margin:0 0 8px;">작은 안내</h2>
+      <div class="divider"></div>
+      <p class="muted">
+        사진을 위한 연출보다는, 편안한 하루를 만들고 싶습니다.
+        가벼운 마음으로 와 주시면 충분합니다 🤍
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function copyAddress() {
+      const text = document.getElementById("addr").innerText;
+      navigator.clipboard.writeText(text)
+        .then(() => alert("주소를 복사했어요!"))
+        .catch(() => alert("복사가 안 되면 주소를 길게 눌러 복사해주세요."));
+    }
+  </script>
+</body>
+</html>
